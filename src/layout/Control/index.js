@@ -1,13 +1,12 @@
 import classNames from "classnames/bind"
 import styles from "./Control.module.scss"
-import { useRef, useState } from "react"
+import { useState } from "react"
 import useMessage from "../../MessageContext/hooks"
 import useTyping from "../../TypingContext/hooks"
 
 
 function Control(){
     const cx = classNames.bind(styles)
-    const inputRef = useRef()
     let isTyping = useTyping()
 
     const [type, setType] = useState("")
@@ -21,7 +20,6 @@ function Control(){
         if(type!=="" && isTyping.current===false){
             uMessage[1](pre=>[...pre,{who:"user",message:type},{who:"cat",message:""}])
             setType("")
-            inputRef.current.focus()
             isTyping.current=true
         }
     }
@@ -35,7 +33,7 @@ function Control(){
                             </path>
                         </svg>
                     </div>
-                    <input placeholder='Type your message here' type="text" value={type} onChange={(e)=>setType(e.target.value)} onKeyDown={(e)=>e.which===13?handleSend():{}} ref={inputRef}/>
+                    <input placeholder='Type your message here' type="text" value={type} onChange={(e)=>setType(e.target.value)} onKeyDown={(e)=>e.which===13?handleSend():{}} />
                     <div className={cx("icon")} onClick={()=>handleSend()}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path fill="currentColor"
