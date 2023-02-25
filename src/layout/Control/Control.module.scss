@@ -1,0 +1,22 @@
+.message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input{
+        background-color: #40414f;
+        border: none;
+        height: 7vh;
+        width: 60%;
+        border-radius: 10px;
+        margin: 10px 10px 10px 10px;
+        font-size: 18px;
+        padding-left: 20px;
+        color: #ececf1;
+    }
+    .icon{
+        color:white;
+        width: 30px;
+        cursor: pointer;
+    }
+}

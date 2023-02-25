@@ -2,13 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import MessageProvider from './MessageContext/MessageProvider';
 import reportWebVitals from './reportWebVitals';
+import LastIndexProvider from './LastIndexContext/LastIndexProvider';
+import TypingProvider from './TypingContext/TypingProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  // <React.StrictMode>
+      <MessageProvider>
+        <LastIndexProvider>
+          <TypingProvider>
+           <App />
+          </TypingProvider>
+        </LastIndexProvider>
+      </MessageProvider>
+  /* </React.StrictMode> */
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,0 +1,29 @@
+html{
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #414141;
+        border-radius: 10px;
+    }
+}
+
+body {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: rgb(52,53,65);
+}
+
+.wrapper {
+    /* width */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #6b6a6a;
+        border-radius: 10px;
+    }
+}
