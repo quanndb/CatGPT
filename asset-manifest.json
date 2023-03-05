@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/CatGPT/static/css/main.e3dc3135.css",
-    "main.js": "/CatGPT/static/js/main.52134fbb.js",
+    "main.js": "/CatGPT/static/js/main.298431dc.js",
     "static/js/787.427738c8.chunk.js": "/CatGPT/static/js/787.427738c8.chunk.js",
     "static/media/sound.mp3": "/CatGPT/static/media/sound.66ca9076b62a74f328ab.mp3",
     "index.html": "/CatGPT/index.html",
     "main.e3dc3135.css.map": "/CatGPT/static/css/main.e3dc3135.css.map",
-    "main.52134fbb.js.map": "/CatGPT/static/js/main.52134fbb.js.map",
+    "main.298431dc.js.map": "/CatGPT/static/js/main.298431dc.js.map",
     "787.427738c8.chunk.js.map": "/CatGPT/static/js/787.427738c8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e3dc3135.css",
-    "static/js/main.52134fbb.js"
+    "static/js/main.298431dc.js"
   ]
 }
