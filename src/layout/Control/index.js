@@ -18,16 +18,16 @@ function Control(){
 
     const handleReset = () => {
         uMessage[1]([])
-        // // Make a GET request
-        // axios.get('https://cat-api-y27r.onrender.com/api/v1/chat/getallchats')
-        // .then(function (response) {
-        // // Handle successful response
-        // console.log('Data:', response.data);
-        // })
-        // .catch(function (error) {
-        // // Handle error
-        // console.error('Error:', error);
-        // });
+        // Make a GET request
+        axios.get('https://cat-api-y27r.onrender.com/api/v1/chat/getallchats')
+        .then(function (response) {
+        // Handle successful response
+        console.log('Data:', response.data);
+        })
+        .catch(function (error) {
+        // Handle error
+        console.error('Error:', error);
+        });
     }
 
     const handleSend = () => {
