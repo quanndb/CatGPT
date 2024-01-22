@@ -19,7 +19,7 @@ function Control(){
     const handleReset = () => {
         uMessage[1]([])
         // // Make a GET request
-        // axios.get('http://localhost:2818/api/v1/chat/getallchats')
+        // axios.get('https://cat-api-y27r.onrender.com/api/v1/chat/getallchats')
         // .then(function (response) {
         // // Handle successful response
         // console.log('Data:', response.data);
@@ -46,7 +46,7 @@ function Control(){
             
         }
         try {
-            axios.post("http://localhost:2818/api/v1/chat/newchat", {data:type})
+            axios.post("https://cat-api-y27r.onrender.com/api/v1/chat/newchat", {data:type})
             .then(response => {
               // Handle the successful response
               console.log('Response:', response.data);
