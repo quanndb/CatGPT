@@ -1,3 +1,7 @@
+# Overview
+
+CatGPT is a fun parody project built with ReactJS, designed to emulate a chatbot experience with a twist—it only responds with "meow meow..." to everything! Whether users ask serious questions, make random requests, or just type anything at all, CatGPT always replies in the universal cat language.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
