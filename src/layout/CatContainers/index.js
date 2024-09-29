@@ -1,42 +1,43 @@
-import classNames from "classnames/bind"
-import styles from "./CatContainers.module.scss"
-import {catpic} from "../../img/index.js"
-import meowSound from "../../sound/sound.mp3"
-import { useEffect, useRef, useState } from "react"
-import useTyping from "../../TypingContext/hooks"
+import classNames from "classnames/bind";
+import styles from "./CatContainers.module.scss";
+import meowSound from "../../sound/sound.mp3";
+import { useEffect, useMemo, useState } from "react";
+import useTyping from "../../context/TypingContext/hooks";
+import catPic from "../../img/cat.png";
 
-function CatContainers(props){
-    const cx = classNames.bind(styles)
-    const times = useRef(Math.floor(10*Math.random()))
-    let isTyping = useTyping()
-    const [newCatMS, setNewCatMS] = useState("")
-    const audio = new Audio(meowSound)
-    if(times.current>0){
-        times.current-=1
-        setTimeout(()=>{
-            audio.play()
-        },500)
-    }
+function CatContainers(props) {
+  const [newCatMS, setNewCatMS] = useState([]);
+  const { setIsTyping } = useTyping();
+  const cx = classNames.bind(styles);
+  const audio = new Audio(meowSound);
+  const times = useMemo(() => {
+    return Math.floor(Math.random() * 10) + 1;
+  }, []);
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            setNewCatMS(pre=>pre+" meow")
-        },500)
-        if(times.current===0) setTimeout(()=>{
-            setNewCatMS(pre=>pre+".")
-            isTyping.current = false
-        },1000)
-    },
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      if (newCatMS.length < times) {
+        setNewCatMS((prev) => [...prev, " meow"]);
+        audio.play();
+      } else if (newCatMS.length === times) {
+        setNewCatMS((prev) => [...prev, "."]);
+        setIsTyping(false);
+      }
+    }, 500);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
     // eslint-disable-next-line
-    [times.current])
+  }, [newCatMS]);
 
-    return(
-        <div className={cx('cat')}>
-                        <div className={cx("mescontainer")}>
-                            <img src={catpic} alt={'cat'} className={cx("avata")}></img>
-                            <p>{props.message || newCatMS}</p>
-                        </div>
-        </div>
-    )
+  return (
+    <div className={cx("cat")}>
+      <div className={cx("mescontainer")}>
+        <img src={catPic} alt={"cat"} className={cx("avata")} />
+        <p className={cx("message")}>{props.message || newCatMS.join("")}</p>
+      </div>
+    </div>
+  );
 }
-export default CatContainers
+export default CatContainers;

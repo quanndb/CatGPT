@@ -1,6 +1,4 @@
-.user{
-    height: 60px;
-}
+
 .avata{
     width: 30px;
     height: 30px;
@@ -10,13 +8,17 @@
 
 .mescontainer{
     width: 80%;
-    margin: auto;
+    margin: 20px auto 20px auto;
     display: flex;
     align-items: center;
     height: 100%;
     p{
+        text-align: left;
+        width: 100%;
         margin: 0;
         color: white;
         font-size: 16px;
+        word-wrap: break-word;
+        white-space: normal;
     }
 }

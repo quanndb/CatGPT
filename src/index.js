@@ -1,22 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import MessageProvider from './MessageContext/MessageProvider';
-import reportWebVitals from './reportWebVitals';
-import LastIndexProvider from './LastIndexContext/LastIndexProvider';
-import TypingProvider from './TypingContext/TypingProvider';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import TypingProvider from "./context/TypingContext/TypingProvider";
+import MessageProdiver from "./context/MessageContext/MessageProvider";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-      <MessageProvider>
-        <LastIndexProvider>
-          <TypingProvider>
-           <App />
-          </TypingProvider>
-        </LastIndexProvider>
-      </MessageProvider>
+  <MessageProdiver>
+    <TypingProvider>
+      <App />
+    </TypingProvider>
+  </MessageProdiver>
   /* </React.StrictMode> */
 );
 
