@@ -12,6 +12,8 @@ function Control() {
 
   const handleReset = () => {
     setListMessage([]);
+    setMessage("");
+    setIsTyping(false);
   };
 
   const handleSend = (e) => {
